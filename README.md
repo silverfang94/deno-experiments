@@ -3,7 +3,7 @@
   <h1><code>Deno books api</code></h1>
 
   <strong>First we need to install 
-  <a href="https://deno.land/">Deno</a>.</strong>
+  <a href="https://deno.land/">Deno</a> and <a href="https://deno.land/x/denon">Denon</a>.</strong>
 </div>
 
 ## 🚴 Usage
@@ -11,7 +11,7 @@
 ### 🛠️ Just run  
 
 ```
-./denon run --allow-net app.ts
+denon run --allow-net app.ts
 ```
 
 ### 🔬 Test with postman
