@@ -18,3 +18,10 @@
 
   <strong>Install
   <a href="https://www.postman.com/downloads/">Postman</a>.</strong>
+
+#### Routes
+
+- GET http://localhost:3000/books- get all books
+- GET http://localhost:3000/books/:id - get 1 book
+- POST http://localhost:3000/books' - create book
+- DELETE http://localhost:3000/books/:id - delete book
