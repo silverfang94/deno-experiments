@@ -1,9 +1,9 @@
 <div align="center">
 
-  <h1><code>Deno books api</code></h1>
+  <h1><code>Deno-Postgres products api</code></h1>
 
   <strong>First we need to install 
-  <a href="https://deno.land/">Deno</a>.</strong>
+  <a href="https://deno.land/">Deno</a> and <a href="https://www.postgresql.org/download/">Deno</a> .</strong>
 </div>
 
 ## 🚴 Usage
