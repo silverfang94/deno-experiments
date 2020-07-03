@@ -11,7 +11,7 @@
 ### 🛠️ Just run  
 
 ```
-denon run --allow-net app.ts
+./denon run --allow-net app.ts
 ```
 
 ### 🔬 Test with postman
