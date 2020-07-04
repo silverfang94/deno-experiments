@@ -6,32 +6,16 @@ const port = Deno.env.get("PORT") || 5000;
 
 const app = snowlight();
 
-/**
- *  In-built Middlewares to Parse the Request Body
- * */
 app.use(app.json());
 
-/**
- *  In-built Middlewares to Parse the URL-Encoded format
- * */
 app.use(app.urlencoded());
 
-/**
- *  Simple GET API - for Testing
- * */
 app.get("/", async (req: IRequest, res: IResponse) => {
 	res.send('Hello world!');
 });
 
 
-/**
- *  Middleware to link user-routes
- * */
 app.use( userRoute );
-
-/**
- * Error Handling Middleware
- */
    
 
 app.listen({

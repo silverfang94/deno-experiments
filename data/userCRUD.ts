@@ -1,35 +1,30 @@
+import { ObjectId } from "https://deno.land/x/mongo@v0.8.0/mod.ts";
 import { connectToDB } from '../database/config.ts';
 
 
-export const createUser = async (data: any) => {
+export const createUser = async (data: any): Promise<any> => {
+    (await connectToDB()).insertOne(data);
     
-    return data;
+    return (await connectToDB()).findOne(data);
 
 };
 
-export const getUserById = (query: any): any => {
+export const getUserById = async (query: any): Promise<any> => {
 
-    return {
-        "name": "William Shakespeare",
-        "age": 456,
-        "email": "bard.of.avon@heavenmail.com"
-    };
+    return (await connectToDB()).findOne({ _id: ObjectId(query) });
+}
+
+export const updateUser = async (filter: any, updateBody: any): Promise<any> => {
+    return (await connectToDB()).updateOne({ username: filter.username, 
+                                            password: filter.password, 
+                                            _id: ObjectId(filter.id), 
+                                            name: filter.name,
+                                            age: filter.age,
+                                            email: filter.email}, updateBody);
 };
 
-export const updateUser = (filter: any, updateBody: any): any => {
+export const deleteUser = async (filterId: any): Promise<any> => {
 
-    return {
-        "name": "William Shakespeare",
-        "age": 456,
-        "email": "bard.of.avon@heavenmail.com"
-    };
-};
-
-export const deleteUser = (filter: any): any => {
-
-    return {
-        "name": "William Shakespeare",
-        "age": 456,
-        "email": "bard.of.avon@heavenmail.com"
-    };
+    console.log(filterId);
+    return (await connectToDB()).deleteOne({_id: ObjectId(filterId)});
 };

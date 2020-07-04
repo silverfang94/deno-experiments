@@ -4,6 +4,7 @@ export const createUserService = async (body: any) => {
 
 
     let newUser = await createUser(body);
+
     return newUser;
 };
 
@@ -17,9 +18,9 @@ export const getUserService = async (params: any) => {
 };
 
 
-export const updateUserService = async (params: any, body: any) => {
+export const updateUserService = async (query: any, body: any) => {
 
-    let updatedUserDoc = await updateUser(params.id, body);
+    let updatedUserDoc = await updateUser(query, body);
     return updatedUserDoc;
 };
 

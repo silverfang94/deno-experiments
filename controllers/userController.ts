@@ -6,7 +6,8 @@ export const createUser = async (req: IRequest, res: IResponse, next: Next) => {
 
     try {
         let serviceCall = await createUserService(req.body);
-        return res.status(200).send(serviceCall);
+
+        return res.status(201).json(serviceCall);
     } catch (e) {
 
         next(e);
@@ -18,7 +19,9 @@ export const createUser = async (req: IRequest, res: IResponse, next: Next) => {
 export const getUserDetails = async (req: IRequest, res: IResponse, next: Next) => {
     try {
         let serviceCall = await getUserService(req.params);
-        return res.status(200).send(serviceCall);
+        console.log(serviceCall)
+
+        return res.status(200).json(serviceCall);
     } catch (e) {
         
         next(e);
@@ -29,8 +32,8 @@ export const getUserDetails = async (req: IRequest, res: IResponse, next: Next) 
 export const updateUser = async (req: IRequest, res: IResponse, next: Next) => {
 
     try {
-        let serviceCall = await updateUserService(req.params, req.body);
-        return res.status(200).send(serviceCall);
+        let serviceCall = await updateUserService(req.query, req.body);
+        return res.status(200).json(serviceCall);
     } catch (e) {
         
         next(e);
@@ -42,7 +45,7 @@ export const removeUser = async (req: IRequest, res: IResponse, next: Next) => {
 
     try {
         let serviceCall = await removeUserService(req.params);
-        return res.status(200).send(serviceCall);
+        return res.status(200).json(serviceCall);
     } catch (e) {
         
         next(e);

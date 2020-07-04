@@ -1,6 +1,8 @@
-export interface User {
 
+export interface User {
+    username: string,
+    password:string,
     name: string,
     age: number,
-    dob: Date
+    email: string
 }

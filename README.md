@@ -1,9 +1,9 @@
 <div align="center">
 
-  <h1><code>Deno docker hello world</code></h1>
+  <h1><code>Deno mongo api</code></h1>
 
   <strong>First we need to install 
-  <a href="https://deno.land/">Deno</a> and <a href="https://deno.land/x/denon">Denon</a>.</strong>
+  <a href="https://deno.land/">Deno</a>, <a href="https://deno.land/x/denon">Denon</a> and <a href="https://www.mongodb.com/try/download/community">Mongo</a>.</strong>
 </div>
 
 ## 🚴 Usage
@@ -21,8 +21,7 @@ denon start
 
 #### Routes
 
-- GET http://localhost:8080/todos
-- GET http://localhost:8080/todos/:id
-- POST http://localhost:8080/todos
-- PUT http://localhost:8080/todos/:id
-- DELETE http://localhost:8080/todos/:id
+- GET http://localhost:8000/user/:id
+- POST http://localhost:8000/user
+- PUT http://localhost:8000/user
+- DELETE http://localhost:8000/user/:id

@@ -8,6 +8,6 @@ router
     .get("/user/:id", simpleMiddleware, getUserDetails)
     .post("/user", simpleMiddleware, createUser)
     .put("/user", simpleMiddleware, updateUser)
-    .delete("/users/:id", simpleMiddleware, removeUser);
+    .delete("/user/:id", simpleMiddleware, removeUser);
 
 export default router;
