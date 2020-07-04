@@ -14,23 +14,15 @@
 denon start
 ```
 
-### 🔬 Result
+### 🔬 Test with postman
 
-  <strong>See
-  <a href="http://localhost:8000/">http://localhost:8000/</a></strong>
+  <strong>Install
+  <a href="https://www.postman.com/downloads/">Postman</a>.</strong>
 
-### Docker
+#### Routes
 
-#### Build
-```
-docker-compose build
-```
-
-#### Run
-```
-docker-compose up deno
-```
-
-#### Result
-  <strong>See
-  <a href="http://localhost:5000/">http://localhost:5000/</a></strong>
+- GET http://localhost:8080/todos
+- GET http://localhost:8080/todos/:id
+- POST http://localhost:8080/todos
+- PUT http://localhost:8080/todos/:id
+- DELETE http://localhost:8080/todos/:id
