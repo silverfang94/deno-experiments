@@ -21,7 +21,4 @@ denon start
 
 #### Routes
 
-- GET http://localhost:8000/user/:id
-- POST http://localhost:8000/user
-- PUT http://localhost:8000/user
-- DELETE http://localhost:8000/user/:id
+See routes in rotes.ts
