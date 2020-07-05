@@ -1,0 +1,114 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZXN0QGV4YW1wbGUuY29tIiwiZXhwIjoxNTkzOTY1NDEyMDc3fQ.u-oHSPA1-ENN1bz72AoCS5oHBUeG4nLmqMEofHMpEHM
+
+
+### Register
+POST http://localhost:8000/api/register
+Content-Type: application/json
+
+{
+    "name": "test",
+    "email": "test@example.com",
+    "password": "test"
+}
+
+### Login
+POST http://localhost:8000/api/login
+Content-Type: application/json
+
+{
+    "email": "test@example.com",
+    "password": "test"
+}
+
+#################
+### Surveys
+###################
+
+### Get all surveys for user
+GET http://localhost:8000/api/survey
+Authorization: Bearer {{token}}
+
+### Get single survey
+GET http://localhost:8000/api/survey/5f01e51c001d099700bfebec
+Authorization: Bearer {{token}}
+
+### Create survey
+POST http://localhost:8000/api/survey
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "name": "survey 3",
+    "description": "Lorem"
+}
+
+### Update survey
+PUT http://localhost:8000/api/survey/5f01bd41006fbdd3009bedda
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "name": "updated",
+    "description": "another"
+}
+
+### Delete survey
+DELETE http://localhost:8000/api/survey/5f01bd41006fbdd3009bedda
+Authorization: Bearer {{token}}
+
+
+#################
+### Questions
+###################
+
+### Get all questions for survey
+GET http://localhost:8000/api/survey/5f01e51c001d099700bfebec/questions
+Authorization: Bearer {{token}}
+
+### Get single question
+GET http://localhost:8000/api/question/5f01f3df00ed086e009ed54a
+Authorization: Bearer {{token}}
+
+### Create question
+POST http://localhost:8000/api/question/5f01e51c001d099700bfebec
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "text": "How much you like Deno",
+    "type": "choice",
+    "required": true,
+    "data": {
+        "multiple": false,
+        "answers": [
+            "I like it wery much",
+            "I like it",
+            "I like don't like it",
+            "I hate it"
+        ]
+    }
+}
+
+### Update question
+PUT http://localhost:8000/api/question/5f01f3df00ed086e009ed54a
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "text": "How much you like Deno",
+    "type": "choice",
+    "required": true,
+    "data": {
+        "multiple": false,
+        "answers": [
+            "I like it wery much",
+            "I like it",
+            "I like don't like it",
+            "I hate it"
+        ]
+    }
+}
+
+### Delete question
+DELETE http://localhost:8000/api/question/5f01ef4000b109c400d81f9f
+Authorization: Bearer {{token}}
