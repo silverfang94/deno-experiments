@@ -1,0 +1,24 @@
+{
+  "$schema": "https://deno.land/x/denon/schema.json",
+  "scripts": {
+    "start": {
+      "cmd": "deno run server/server.ts",
+      "desc": "run my server/server.ts file",
+      "allow": [
+        "net",
+        "read"
+      ],
+      "unstable": true
+    },
+    "test": {
+      "cmd": "deno run server/test.ts",
+      "desc": "run my server/test.ts file",
+      "allow": [
+        "net",
+        "read"
+      ],
+      "unstable": true
+    }
+  }
+}
+
